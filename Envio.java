@@ -7,8 +7,7 @@
  * @author -   
  *  
  */
-public class Envio
-{
+public class Envio {
     private final double PRECIO_KILO = 2.2;  // precio coste envío Kg. en euros
     private Paquete paquete1;
     private Paquete paquete2;
@@ -19,7 +18,7 @@ public class Envio
      * Inicializa los paquetes a null (inicialmente
      * el envío no tiene paquetes)
      */
-    public Envio()    {
+    public Envio() {
         this.paquete1 = null;
         this.paquete2 = null;
         this.paquete3 = null;
