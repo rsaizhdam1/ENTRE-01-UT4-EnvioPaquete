@@ -6,8 +6,7 @@ import java.util.Random;
  * @author - 
  *  
  */
-public class Paquete 
-{
+public class Paquete  {
     private Random generador;
     private Dimension dimension;
     private double peso;
@@ -17,9 +16,10 @@ public class Paquete
      * Crea el paquete con 40 , 30, 50 de
      * alto, ancho, largo (en cm) y peso 8 Kg
      */
-    public Paquete()    {
-        //TODO
-         
+    public Paquete() {
+        dimension = new Dimension(40, 30, 50);
+        peso = 8;
+        
 
     }
 
@@ -29,8 +29,10 @@ public class Paquete
      *  y peso un valor aleatorio entre 2 y 8 Kg inclusive
      *  Se crea aquí el generador
      */
-    public Paquete(double alto, double ancho, double largo)    {
-        //TODO
+    public Paquete(double alto, double ancho, double largo) {
+        dimension = new Dimension(alto, ancho, largo);
+        generador = new Random();
+        peso = generador.nextDouble() * (9 - 2) + 2;
 
     }
 
@@ -39,8 +41,9 @@ public class Paquete
      * Crea el paquete a la dimension y peso indicados
      * 
      */
-    public Paquete(Dimension dimension, double peso)    {
-        //TODO
+    public Paquete(Dimension dimension, double peso) {
+        this.dimension = dimension;
+        this.peso = peso;
 
     }
 
@@ -65,8 +68,7 @@ public class Paquete
      * El volumen = alto x ancho x largo
      */
     public double calcularVolumen() {
-       //TODO
-       return 0;
+       return dimension.getAlto() * dimension.getAncho() * dimension.getLargo();
 
     }
 
@@ -75,8 +77,7 @@ public class Paquete
      * Peso volumétrico = volumen del paquete / 5000
      */
     public double calcularPesoVolumetrico() {
-        //TODO
-       return 0;
+       return calcularVolumen() / 5000;
 
     }
 
@@ -86,7 +87,6 @@ public class Paquete
      *      
      */
     public double calcularPesoFacturable() {
-        //TODO
        return 0;
 
     }
@@ -97,8 +97,8 @@ public class Paquete
      * Se obtienen copias también de los objetos que contenga
      */
     public Paquete obtenerCopia() {
-        //TODO
-       return null;
+        Paquete copia = new Paquete(dimension.obtenerCopia(), peso);
+        return copia;
 
     }
 
@@ -107,8 +107,9 @@ public class Paquete
      *  (leer enunciado)
      */
     public String toString() {
-        //TODO
-       return null;
+       return String.format("Descripción del paquete\n%s\n%20s%10.2f(Kg)\n%20s%10.2f(cm3)\n%20s%10.2f(Kg)",
+                             dimension.obtenerCopia(), "Peso real:", peso, "Volumen:", 
+                             calcularVolumen(), "Peso volumétrico:", calcularPesoVolumetrico());
 
     }
     

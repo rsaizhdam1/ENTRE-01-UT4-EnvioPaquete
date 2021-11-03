@@ -4,8 +4,7 @@
  *  
  *  @author - 
  */
-public class Dimension  
-{
+public class Dimension {
     private double alto;
     private double ancho;
     private double largo;
@@ -13,7 +12,7 @@ public class Dimension
     /**
      * constructor  
      */
-    public Dimension(double alto, double ancho, double largo)    {
+    public Dimension(double alto, double ancho, double largo) {
         this.alto = alto;
         this.ancho = ancho;
         this.largo = largo;
@@ -23,21 +22,21 @@ public class Dimension
     /**
      * accesor para  el alto
      */
-    public double getAlto()    {
+    public double getAlto() {
         return alto;
     }
 
     /**
      * accesor para  el ancho
      */
-    public double getAncho()    {
+    public double getAncho() {
         return ancho;
     }
 
     /**
      * accesor para  el largo
      */
-    public double getLargo()    {
+    public double getLargo() {
         return largo;
     }
 
@@ -56,7 +55,7 @@ public class Dimension
      */
     public String toString() {
         return String.format("%20s%10.2f(cm)\n%20s%10.2f(cm)\n%20s%10.2f(cm)", 
-                             "Alto: ", alto, "Ancho: ", ancho, "Largo: ", largo);
+                             "Alto:", alto, "Ancho:", ancho, "Largo:", largo);
     }
 
     /**
