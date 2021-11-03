@@ -2,7 +2,7 @@
 /**
  *  Representa una dimensión
  *  
- *  @author - 
+ *  @author - Rubén Saiz
  */
 public class Dimension {
     private double alto;

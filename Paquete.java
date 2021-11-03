@@ -3,7 +3,7 @@ import java.util.Random;
  *  Un objeto de esta clase guarda los datos de un
  *  paquete
  * 
- * @author - 
+ * @author - Rubén Saiz
  *  
  */
 public class Paquete  {
@@ -77,7 +77,7 @@ public class Paquete  {
      * Peso volumétrico = volumen del paquete / 5000
      */
     public double calcularPesoVolumetrico() {
-       return calcularVolumen() / 5000;
+        return calcularVolumen() / 5000;
 
     }
 
@@ -87,7 +87,14 @@ public class Paquete  {
      *      
      */
     public double calcularPesoFacturable() {
-       return 0;
+        double pesoFacturable;
+        if (peso > calcularPesoVolumetrico()) {
+            pesoFacturable = peso;
+        }
+        else {
+            pesoFacturable = calcularPesoVolumetrico();
+        }
+        return pesoFacturable;
 
     }
 
@@ -107,7 +114,7 @@ public class Paquete  {
      *  (leer enunciado)
      */
     public String toString() {
-       return String.format("Descripción del paquete\n%s\n%20s%10.2f(Kg)\n%20s%10.2f(cm3)\n%20s%10.2f(Kg)",
+       return String.format("Descripción del paquete\n%s\n%20s%10.2f(Kg)\n%20s%10.2f(cm3)\n%20s%10.2f(Kg)\n",
                              dimension.obtenerCopia(), "Peso real:", peso, "Volumen:", 
                              calcularVolumen(), "Peso volumétrico:", calcularPesoVolumetrico());
 
