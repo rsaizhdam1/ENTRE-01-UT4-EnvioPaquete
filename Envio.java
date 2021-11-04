@@ -145,6 +145,8 @@ public class Envio {
         if (getNumeroPaquetes() == 3) {
             string += paquete3.toString() + "\n";
         }
+        string += String.format("Coste total envío: %.2f€\n", calcularCosteTotalEnvio());
+        string += "\n-----------------------------------------------------\n";
         return string;
     }
 
